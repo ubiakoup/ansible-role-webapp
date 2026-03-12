@@ -261,3 +261,5 @@ ansible-playbook -i hosts.yml deploy_webapp.yml
 # Author
 
 Ulrich Kouatang
+
+Industrial DevOps Engineer | Automation Engineer | IIoT Engineer
