@@ -1,0 +1,39 @@
+---
+- name: Install EPEL repo
+  ansible.builtin.package: 
+   name: epel-release 
+   state: present
+  when: ansible_os_family == "RedHat"
+- name: Download pip script
+  ansible.builtin.get_url:
+    url: https://bootstrap.pypa.io/pip/2.7/get-pip.py
+    dest: /tmp/get-pip.py
+- name: Install python-pip
+  ansible.builtin.command: python2.7 /tmp/get-pip.py
+
+- name: Install docker python
+  ansible.builtin.pip:
+   name: docker-py
+ 
+- name: install package with yum
+  ansible.builtin.yum:
+    name: '{{ item}}'
+    state: present
+  loop:
+    - git
+    - wget
+  when: ansible_os_family == "RedHat"
+- name: Generate index.html from template
+  template:
+    src: index.html.j2
+    dest: /home/admin/index.html
+- name: Create Apache container
+  docker_container:
+    name: "{{container_name}}"
+    image: "{{container_image}}"
+    state: started
+    ports:
+      - "{{container_port}}:80"
+    volumes:
+     - /home/admin/index.html:/usr/local/apache2/htdocs/index.html
+
