@@ -245,9 +245,10 @@ http://10.0.22.5:8080
 To simplify deployment, the configuration files can be stored in a Git repository.
 
 Users can clone the repository:
+```
+git clone https://github.com/ubiakoup/config-ansible-role-webapp.git
 
-git clone <repository-url>
-
+```
 Then install the role and run the deployment:
 ```
 ansible-galaxy install -r roles/requirements.yml
