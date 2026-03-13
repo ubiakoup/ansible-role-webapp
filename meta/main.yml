@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: webapp
+  role_name: ansible-role-webapp
   author: Ulrich Kouatang
   description: Deploy Apache container with Docker
   company: Eazytraining
