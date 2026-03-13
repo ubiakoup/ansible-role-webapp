@@ -97,9 +97,9 @@ This allows passwordless SSH authentication.
 The role includes a test playbook located in the `tests` directory.
 
 Run the test:
-
+```
 ansible-playbook -i tests/inventory tests/test.yml
-
+```
 This verifies that the role works correctly before using it in another project.
 
 Inventory must be ajusted with the Client ip-adress
