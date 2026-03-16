@@ -2,4 +2,4 @@
 container_name: webapp
 container_image: httpd
 container_port: 80
-os_name: RedHad
+os_name: "RedHad"
