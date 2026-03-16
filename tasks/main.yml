@@ -8,7 +8,7 @@
   loop:
     - git
     - wget
-  when: ansible_os_family == {{"os_name"}}
+  when: ansible_os_family == "{{os_name}}"
 - name: Generate index.html from template
   template:
     src: index.html.j2
