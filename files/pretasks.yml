@@ -3,7 +3,7 @@
   ansible.builtin.package: 
    name: epel-release 
    state: present
-  when: ansible_os_family == "{{os_name}}"
+  when: ansible_os_family in os_family_supported
 - name: Download pip script
   ansible.builtin.get_url:
     url: https://bootstrap.pypa.io/pip/2.7/get-pip.py

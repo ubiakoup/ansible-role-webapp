@@ -2,4 +2,6 @@
 container_name: webapp
 container_image: httpd
 container_port: 80
-os_name: "RedHad"
+os_family_supported:
+  - RedHat
+  - Debian
